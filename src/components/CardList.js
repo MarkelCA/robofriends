@@ -9,7 +9,7 @@ const CardList = ({ robots }) => {
     );
 }
 
-function printCard({ id, name, email, username }) {
+const printCard = ( { id, name, email, username }) => {
     return <Card key={id} id={id} name={name} email={email} username={username} />
 }
 
