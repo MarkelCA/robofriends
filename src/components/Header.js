@@ -15,13 +15,11 @@ class Header extends Component {
     onSearchChange = (event) => {
         const searchField_value = event.target.value;
         this.setState({searchField:searchField_value}, () => {
-            console.log(searchField_value)
-            console.log(this.state.searchField)
 
             const robots = this.state.robots;
             const filteredRobots = robots.filter(this.includesSearchField)
-            console.log(filteredRobots)
-            console.log(this.props.searching(filteredRobots))
+            this.props.searching(filteredRobots)
+
         });
     }
 
