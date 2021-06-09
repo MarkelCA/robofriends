@@ -24,7 +24,14 @@ class Header extends Component {
     }
 
     includesSearchField = (robot) => {
-        return robot.username.toLowerCase().includes(this.state.searchField.toLowerCase())
+    let includes_field = false
+        // We search by all the fields of the robot
+        for(const field in robot){
+            includes_field = robot[field].toString().toLowerCase().includes(this.state.searchField.toLowerCase())
+            if (includes_field) break
+        }
+        
+        return  includes_field
     }
 
     render() {
