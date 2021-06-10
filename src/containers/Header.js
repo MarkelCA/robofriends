@@ -3,6 +3,11 @@ import SearchBox from '../components/SearchBox';
 import Title from '../components/Title';
 
 class Header extends Component {
+        /*
+         * It's important for Header to have its own robots state
+         * so we can change the App's robots state without modifying 
+         * this one, otherwise we can't recover the robots after filtering
+         */
     constructor() {
         super();
         this.state = {
@@ -14,7 +19,8 @@ class Header extends Component {
     onSearchChange = (event) => {
         const searchField_value = event.target.value;
         this.setState({ searchField:searchField_value }, () => {
-            const robots = this.state.robots;
+            // We destructure for a clear syntax
+            const { robots } = this.state;
             const filteredRobots = robots.filter(this.includesSearchField)
             this.props.searching(filteredRobots)
 
@@ -23,13 +29,21 @@ class Header extends Component {
 
     includesSearchField = (robot) => {
     let includes_field = false
+        // We destructure for a clear syntax
+        const { searchField } = this.state
         // We search by all the fields of the robot
         for(const field in robot){
-            includes_field = robot[field].toString().toLowerCase().includes(this.state.searchField.toLowerCase())
-            if (includes_field) break
+            includes_field = robot[field]
+                .toString()
+                .toLowerCase()
+                .includes( searchField.toLowerCase() )
+
+            if (includes_field) return includes_field
         }
-        
-        return  includes_field
+
+        // NOT REACHEABLE
+        // Prevents bug if there are no fields on the robot
+        return false;
     }
 
     render() {

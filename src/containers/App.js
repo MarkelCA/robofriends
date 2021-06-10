@@ -12,18 +12,19 @@ class App extends Component {
 
         }
 
-        changedSearchField = (robotsFiltered) => {
-            this.setState({ robots : robotsFiltered});
+        /*
+        * Function that updates the robot state list based on searchBox filter
+        */
+        changedSearchField = (robotsFiltered) => { this.setState({ robots : robotsFiltered }) }
 
-    }
     render(){
-        //if(this.state.robots.length === 0 && this.state.searchField) return <h2>Loading...</h2>
-        //else
+        // We destructure for a clear syntax
+        const { robots } = this.state
         return (
             <div id="container" className='tc'>
-                <Header robots = {this.state.robots} searching={this.changedSearchField}/>
+                <Header robots = { robots } searching={this.changedSearchField}/>
                 <Scroll>
-                    <CardList robots={this.state.robots} />
+                    <CardList robots={ robots } />
                 </Scroll>
             </div>
         );
