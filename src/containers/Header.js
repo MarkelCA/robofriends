@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
-import SearchBox from './SearchBox.js';
-import Title from './Title.js';
-import { robots } from '../robots.js';
+import SearchBox from '../components/SearchBox';
+import Title from '../components/Title';
 
 class Header extends Component {
     constructor() {
         super();
         this.state = {
-            robots: robots,
-            searchField : ''
-        };
+            robots: [],
+            searchField : ""
+        }
     }
 
     onSearchChange = (event) => {
         const searchField_value = event.target.value;
-        this.setState({searchField:searchField_value}, () => {
-
+        this.setState({ searchField:searchField_value }, () => {
             const robots = this.state.robots;
             const filteredRobots = robots.filter(this.includesSearchField)
             this.props.searching(filteredRobots)
@@ -42,6 +40,13 @@ class Header extends Component {
             </div>
         );
     };
+
+    componentDidMount() {
+        // We fetch the robots from a test api into json
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then( response =>  response.json() )
+            .then( users =>  this.setState({ robots : users }) )
+    }
 }
 
 export default Header;

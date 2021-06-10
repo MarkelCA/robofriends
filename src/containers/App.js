@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import Header from './Header.js';
-import CardList from './CardList.js';
-import Scroll from './Scroll.js';
+import Header from './Header';
+import CardList from '../components/CardList';
+import Scroll from '../components/Scroll';
 
 class App extends Component {
     constructor() {
             super();
             this.state = {
-                robots: [],
-                searchField : ''
+                robots: []
             };
 
         }
@@ -22,7 +21,7 @@ class App extends Component {
         //else
         return (
             <div id="container" className='tc'>
-                <Header searching={this.changedSearchField}/>
+                <Header robots = {this.state.robots} searching={this.changedSearchField}/>
                 <Scroll>
                     <CardList robots={this.state.robots} />
                 </Scroll>
