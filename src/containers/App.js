@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './Header';
 import CardList from '../components/CardList';
 import Scroll from '../components/Scroll';
+import ErrorBoundry from '../components/ErrorBoundry'
 
 class App extends Component {
     constructor() {
@@ -24,7 +25,9 @@ class App extends Component {
             <div id="container" className='tc'>
                 <Header robots = { robots } searching={this.changedSearchField}/>
                 <Scroll>
-                    <CardList robots={ robots } />
+                    <ErrorBoundry>
+                        <CardList robots={ robots } />
+                    </ErrorBoundry>
                 </Scroll>
             </div>
         );
