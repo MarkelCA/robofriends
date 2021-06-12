@@ -1,6 +1,8 @@
+import React, { Component } from 'react'
+import './Title.css'
 const Title = () => {
     return (
-        <h1>Robofriends</h1>
+        <h1 id='header-title'>Robofriends</h1>
     );
 }
 

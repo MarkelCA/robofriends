@@ -10,7 +10,6 @@ class App extends Component {
             this.state = {
                 robots: []
             };
-
         }
 
         /*
@@ -24,11 +23,9 @@ class App extends Component {
         return (
             <div id="container" className='tc'>
                 <Header robots = { robots } searching={this.changedSearchField}/>
-                <Scroll>
                     <ErrorBoundry>
                         <CardList robots={ robots } />
                     </ErrorBoundry>
-                </Scroll>
             </div>
         );
     };
