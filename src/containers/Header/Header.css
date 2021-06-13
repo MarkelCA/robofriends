@@ -37,6 +37,8 @@
         font-size: 200%;
     }
 }
+
+
 @media (max-width: 380px) {
     #header-title  {
         font-size:  150%;
