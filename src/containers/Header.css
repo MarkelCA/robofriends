@@ -33,15 +33,22 @@
         font-size: 200%;
     }
 }
+@media (max-width: 380px) {
+    #header-title  {
+        font-size:  150%;
+    }
+}
 @media (max-width: 700px) {
     #header {
         flex-direction: column;
+        height: 55vh !important;
     }
     #header.small #main-logo{
         height: 0 !important;
     }
     #main-logo {
         height:25vw !important;
+        width:25vw !important;
     }
 }
 

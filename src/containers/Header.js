@@ -63,12 +63,10 @@ class Header extends Component {
         const cardList = document.getElementById('robot-list')
         const is_scrolled = document.body.scrollTop > 100 || document.documentElement.scrollTop > 100
         const searchField_empty = this.state.searchField === ''
-        console.log('lfdkjflkf;kjk')
 
         if(!searchField_empty) {
             header.classList.add('small')
             cardList.style.margin = '0'
-            console.log('notempty')
             return
         }
 
