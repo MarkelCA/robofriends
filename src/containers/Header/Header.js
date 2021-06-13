@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import SearchBox from '../components/SearchBox';
-import Title from '../components/Title';
-import Logo from '../components/Logo.js'
-import Header_Content from '../components/Header-Content.js'
-import Credits from '../components/Credits'
+import SearchBox from '../../components/SearchBox/SearchBox';
+import Title from '../../components/Title/Title';
+import Logo from '../../components/Logo/Logo'
+import Header_Content from '../../components/Header-Content/Header-Content.js'
+import Credits from '../../components/Credits/Credits'
 import './Header.css'
 
 

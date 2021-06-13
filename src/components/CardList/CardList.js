@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card.js';
+import Card from '../Card/Card.js';
 
 const CardList = ({ robots }) => {
     // The next line it's just to test the ErrorBoundry component

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import CardList from '../components/CardList';
-import Scroll from '../components/Scroll';
-import ErrorBoundry from '../components/ErrorBoundry'
+import Header from '../Header/Header';
+import CardList from '../../components/CardList/CardList';
+import Scroll from '../../components/Scroll/Scroll';
+import ErrorBoundry from '../../components/ErrorBoundry/ErrorBoundry'
 import './App.css'
 
 class App extends Component {
