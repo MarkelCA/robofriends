@@ -23,12 +23,16 @@
       height: 20vh !important;
       font-size:  16px;
 }
-#header.small #header-content {
-}
  #header.small #header-title {
      font-size: 23px;
  }
 @media (max-width: 700px) {
+    /*#header:not(.small) {*/
+        /*margin-top: 65vh !important;*/
+    /*}*/
+    .small #robot-list {
+        margin-top: 0 !important;
+    }
     #header.small {
         height: 20vh !important;
     }

@@ -61,7 +61,7 @@ class Header extends Component {
     scrollFunction = () => {
         const header = document.getElementById('header')
         const cardList = document.getElementById('robot-list')
-        const is_scrolled = document.body.scrollTop > 100 || document.documentElement.scrollTop > 100
+        const is_scrolled = document.body.scrollTop > 0 || document.documentElement.scrollTop > 0
         const searchField_empty = this.state.searchField === ''
 
         if(!searchField_empty) {
@@ -80,7 +80,8 @@ class Header extends Component {
     foldHeader(header, cardList, folded) {
         if(folded) {
             header.classList.remove('small')
-            cardList.style.marginTop = '50vh'
+            const margin = window.innerWidth <= 700 ? '65vh' : '50vh'
+            cardList.style.marginTop = margin
             document.getElementById('credits').style.display = 'block'
         }
         else {
@@ -88,7 +89,13 @@ class Header extends Component {
             cardList.style.margin = '0'
             document.getElementById('credits').style.display = 'none'
         }
-
+    }
+    foldOnResize() {
+            const cardList = document.getElementById('robot-list')
+            const margin = window.innerWidth <= 700 ? '65vh' : '50vh'
+        const isFolded = document.getElementById('header').classList.contains('small')
+        if(!isFolded)
+            cardList.style.marginTop = margin
     }
     render() {
         return (
@@ -109,6 +116,7 @@ class Header extends Component {
             .then( response =>  response.json() )
             .then( users =>  this.setState({ robots : users }) )
         window.onscroll = this.scrollFunction;
+        window.onresize = this.foldOnResize
     }
 }
 
