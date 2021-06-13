@@ -27,9 +27,6 @@
      font-size: 23px;
  }
 @media (max-width: 700px) {
-    /*#header:not(.small) {*/
-        /*margin-top: 65vh !important;*/
-    /*}*/
     .small #robot-list {
         margin-top: 0 !important;
     }
@@ -43,6 +40,10 @@
 @media (max-width: 380px) {
     #header-title  {
         font-size:  150%;
+    }
+    #main-logo {
+        height:15vw !important;
+        width:15vw !important;
     }
 }
 @media (max-width: 700px) {
@@ -73,10 +74,15 @@
       align-items: flex-end;
   }
   #header #main-logo {
-      height: 20vw;
-      width: 40vh;
+      width: 45vh;
+      height: 35vh;
+
+      max-height: 35vh !important;
+      max-width: 45vh;
+
       min-width: 130px;
       min-height: 130px;
+
       transition: .7s;
   }
   #header.small #main-logo {
