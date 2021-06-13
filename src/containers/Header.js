@@ -3,6 +3,7 @@ import SearchBox from '../components/SearchBox';
 import Title from '../components/Title';
 import Logo from '../components/Logo.js'
 import Header_Content from '../components/Header-Content.js'
+import Credits from '../components/Credits'
 import './Header.css'
 
 
@@ -82,10 +83,12 @@ class Header extends Component {
         if(folded) {
             header.classList.remove('small')
             cardList.style.marginTop = '50vh'
+            document.getElementById('credits').style.display = 'block'
         }
         else {
             header.classList.add('small')
             cardList.style.margin = '0'
+            document.getElementById('credits').style.display = 'none'
         }
 
     }
@@ -96,6 +99,7 @@ class Header extends Component {
                 <Header_Content>
                     <Title/>
                     <SearchBox searchChange={this.onSearchChange}/>
+                    <Credits/>
                 </Header_Content>
             </div>
         );

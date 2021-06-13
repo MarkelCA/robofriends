@@ -5,7 +5,7 @@ const CardList = ({ robots }) => {
     // The next line it's just to test the ErrorBoundry component
     //throw new Error('Something went wrong')
     return (
-        <div id='robot-list' className="cards-wrapper tc bg-dark-green">
+        <div id='robot-list' className="cards-wrapper tc bg-light-blue">
             {robots.map(printCard)}
         </div>
     );

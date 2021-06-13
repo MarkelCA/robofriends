@@ -1,0 +1,34 @@
+#credits {
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+}
+ #credits a {
+     color: black;
+     margin-left: 10px;
+     color: #dcfda8;
+     text-decoration: none;
+     font-size: 21px;
+     padding: .2em;
+     transition: .5s;
+     display: inline-block
+ }
+
+ #github-account:hover {
+     color:#bfff00;
+     transition: .5s;
+ }
+#github-account::after {
+  content: "";
+  position: relative;
+  top: 6px;
+  width: 0;
+  height: 2px;
+  background-color:#bfff00;
+  display: block;
+  transition: width 0.5s;
+}
+
+#github-account:hover::after {
+  width: 100%;
+}
