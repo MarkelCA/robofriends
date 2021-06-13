@@ -19,16 +19,51 @@
 } 
 
 #header.small {
-      height: 15vh !important;
+      height: 16vh !important;
       font-size:  16px;
 }
+#header.small #header-content {
+}
  #header.small #header-title {
-     font-size: 16px;
+     font-size: 23px;
  }
+@media (max-width: 700px) {
+    #header-title {
+        font-size: 200%;
+    }
+}
+@media (max-width: 700px) {
+    #header {
+        flex-direction: column;
+    }
+    #header.small #main-logo{
+        height: 0 !important;
+    }
+    #main-logo {
+        height:25vw !important;
+    }
+}
+
   #header.small #searchbox {
       font-size: 16px;
+  }
+  #header.small #searchbox input {
+      height: 30px;
+  }
+
+
+  #header #main-logo-container {
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+  }
+  #header #main-logo {
+      height: 20vw;
+      width: 40vh;
+      transition: .7s;
   }
   #header.small #main-logo {
       width: 100px;
       height: 100px;
   }
+

@@ -3,6 +3,7 @@ import Header from './Header';
 import CardList from '../components/CardList';
 import Scroll from '../components/Scroll';
 import ErrorBoundry from '../components/ErrorBoundry'
+import './App.css'
 
 class App extends Component {
     constructor() {
@@ -16,6 +17,7 @@ class App extends Component {
         * Function that updates the robot state list based on searchBox filter
         */
         changedSearchField = (robotsFiltered) => { this.setState({ robots : robotsFiltered }) }
+
 
     render(){
         // We destructure for a clear syntax

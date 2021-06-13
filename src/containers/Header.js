@@ -23,11 +23,12 @@ class Header extends Component {
     onSearchChange = (event) => {
         const searchField_value = event.target.value;
         const header = document.getElementById('header')
+        const cardList = document.getElementById('robot-list')
 
         if(searchField_value)
-            header.classList.add('small')
+            this.foldHeader(header, cardList, false)
         else
-            header.classList.remove('small')
+            this.foldHeader(header, cardList, true)
 
         this.setState({ searchField:searchField_value }, () => {
             // We destructure for a clear syntax
@@ -56,21 +57,36 @@ class Header extends Component {
         // Prevents bug if there are no fields on the robot
         return false;
     }
-
     scrollFunction = () => {
         const header = document.getElementById('header')
+        const cardList = document.getElementById('robot-list')
         const is_scrolled = document.body.scrollTop > 100 || document.documentElement.scrollTop > 100
         const searchField_empty = this.state.searchField === ''
+        console.log('lfdkjflkf;kjk')
 
-        if(is_scrolled) {
-            if(searchField_empty)
-                header.classList.add('small')
-            
+        if(!searchField_empty) {
+            header.classList.add('small')
+            cardList.style.margin = '0'
+            console.log('notempty')
+            return
         }
-        else 
-            header.classList.remove('small')
 
-            
+        if(is_scrolled) 
+            this.foldHeader(header, cardList, false)
+        
+        else 
+            this.foldHeader(header,cardList, true)
+        
+    }
+    foldHeader(header, cardList, folded) {
+        if(folded) {
+            header.classList.remove('small')
+            cardList.style.marginTop = '50vh'
+        }
+        else {
+            header.classList.add('small')
+            cardList.style.margin = '0'
+        }
 
     }
     render() {
