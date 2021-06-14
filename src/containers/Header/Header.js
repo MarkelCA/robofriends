@@ -90,6 +90,11 @@ class Header extends Component {
             document.getElementById('credits').style.display = 'none'
         }
     }
+    foldOnInit() {
+            const cardList = document.getElementById('robot-list')
+            const margin = window.innerWidth <= 700 ? '65vh' : '50vh'
+            cardList.style.marginTop = margin
+    }
     foldOnResize() {
             const cardList = document.getElementById('robot-list')
             const margin = window.innerWidth <= 700 ? '65vh' : '50vh'
@@ -115,6 +120,7 @@ class Header extends Component {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then( response =>  response.json() )
             .then( users =>  this.setState({ robots : users }) )
+        this.foldOnInit()
         window.onscroll = this.scrollFunction;
         window.onresize = this.foldOnResize
     }

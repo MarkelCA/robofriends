@@ -27,6 +27,9 @@
      font-size: 23px;
  }
 @media (max-width: 700px) {
+    #robot-list {
+        /*margin-top: 65vh;*/
+    }
     .small #robot-list {
         margin-top: 0 !important;
     }
