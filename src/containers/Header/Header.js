@@ -66,7 +66,7 @@ class Header extends Component {
 
         if(!searchField_empty) {
             header.classList.add('small')
-            cardList.style.marginTop = '20vh'
+            cardList.style.marginTop = '15vh'
             return
         }
 
@@ -86,7 +86,7 @@ class Header extends Component {
         }
         else {
             header.classList.add('small')
-            cardList.style.marginTop = '20vh'
+            cardList.style.marginTop = '15vh'
             document.getElementById('credits').style.display = 'none'
         }
     }

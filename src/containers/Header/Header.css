@@ -18,23 +18,29 @@
       width: 100%;
     transition: .7s;
 } 
+#header:not(.small) {
+    min-height: 165px;
+}
 
 #header.small {
-      height: 20vh !important;
+      height: 15vh !important;
+      min-height: 100px;
       font-size:  16px;
 }
  #header.small #header-title {
      font-size: 23px;
  }
 @media (max-width: 700px) {
-    #robot-list {
-        /*margin-top: 65vh;*/
+    #header:not(.small) {
+        min-height: 282px !important;
     }
     .small #robot-list {
         margin-top: 0 !important;
     }
     #header.small {
-        height: 20vh !important;
+        height: 15vh !important;
+        min-height: 91px;
+        transition: .7s;
     }
     #header-title {
         font-size: 200%;
@@ -79,7 +85,7 @@
       align-items: flex-end;
   }
   #header #main-logo {
-      width: 45vh;
+      width: 35vh;
       height: 35vh;
 
       max-height: 35vh !important;
